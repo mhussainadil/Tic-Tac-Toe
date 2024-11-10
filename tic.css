@@ -1,0 +1,185 @@
+html,body{
+    background: linear-gradient(rgb(93, 206, 218),rgb(179, 173, 173));
+    background-size: contain;
+    color: whitesmoke;
+height: 100dvh;
+overflow: auto;
+box-sizing: border-box;
+font-family: cursive;
+font-weight: bolder;
+text-shadow: rgb(0, 0, 0) 0 0 5px;
+padding: 0;
+margin: 0;
+text-align: center;
+overflow-x: hidden;
+overflow-y: auto;
+scrollbar-width:thin;
+scrollbar-color:rgb(93, 206, 218) ;
+}
+.container{
+    display:flex;
+    width: 100%;
+    border: 1px solid ;
+    min-height: 300px;
+    justify-content: space-evenly;
+}
+.player1,.player2{
+width: 25%;
+border: 1px solid;
+font-size: 20px;
+line-height: 2rem;
+word-spacing: 10px;
+}
+.container .gamebox{
+    flex-grow: 1;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* gap: 10px; */
+    text-align: center;
+min-width: 400px;
+}
+.container{
+  border: 1px solid whitesmoke;
+}
+.box,.b1,.b2,.b3,.b4,.b5,.b6,.b7,.b8,.b9{
+  cursor: pointer;
+    border: 1px solid  rgb(255, 255, 255);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+}
+.flashbox{
+    box-shadow: 0 0 10px whitesmoke;
+    transform: scale(0.85)
+    ;
+    transition: ease 0.5s;
+    perspective:100PX;
+    border-radius: 20px solid black;
+}
+.detailsplayer1,.detailsplayer2{
+    height: 90%;;
+    width: 98%;
+    /* margin: ; */
+    overflow: auto;
+    box-shadow: 1px 1px  5px rgba(0, 0, 0, 0.5);
+}
+.gamebox{
+  z-index: 1;
+        transform:
+          scale(0.75)
+          rotateY(-30deg)
+          rotateX(45deg)
+          translateZ(10rem);
+        transform-origin: 50% 100%;
+        transform-style: preserve-3d;
+        transition: 1s ease transform;
+        transition-delay: 0.5s;
+        box-shadow: 1rem 1rem 1.5rem  rgb(62, 67, 67);
+        &:hover {
+          transform: scale(1);
+          box-shadow: 0px 0px 5px rgb(255, 255, 255);
+          /* border: 1px solid; */
+          border: none;
+        }
+      &:not(:hover){
+        animation:shadoweff 1s linear;
+      }
+        &::before {
+          transform: translateZ(4rem);
+          &:hover {
+            transform: translateZ(0);
+          }
+
+        }
+      
+        &::after {
+          transform: translateZ(-4rem);
+
+          &:hover {
+            transform: translateZ(-1px);
+          }
+        }
+      }
+@keyframes shadoweff {
+  0%,100%{
+box-shadow: 0 0 5px grey;
+  }
+}
+      .red{
+        background-color: rgb(255, 0, 0);
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 2px 2rem rgb(0, 0, 0);
+        font-size: 2.5rem;
+        /* transition-duration:1s;
+        transition-property: ; */
+      }
+      .reset{
+        margin: 0.5rem;
+        width: 50%;
+        height: 1.5rem;
+        font-weight: 700;
+        border-color: whitesmoke;
+        box-shadow: 0 0 5px rgb(0, 0, 0);
+background: transparent;
+text-shadow: 0 0 10px gray;
+color: #fff;
+      }
+      #tttimg{
+        height: 2.5rem;
+        width: 2.5rem;
+        margin: 0 1rem 0  1rem;
+      
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      .headding{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .cup{
+        width: 65%;
+        height: 60%;
+        /* background-color: wheat; */
+        background: transparent;
+      }
+      .detailsplayer1,.detailsplayer2{
+        display: flex;
+     justify-content: center;
+    align-items: center;
+  }
+  
+.displaywinner{
+  position: absolute;
+  left: 34%;
+  top: -180px;
+background: transparent;
+  width: 400px;
+  height: 150px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  font-size: 2rem;
+  border: 0.25rem rgb(0, 0, 0);
+  box-shadow: inset 0 0 1.5rem black;
+  box-shadow: 0 0 0.5rem whitesmoke;
+  text-shadow: inset 0 0 0.25rem gray;
+  border-radius: 0.5rem ;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode;; */
+animation: gamescene 1s ease-out 0.25s  forwards;
+animation-iteration-count: 1;
+}
+@keyframes gamescene{0%{   top:-180px;
+}
+100%{
+top: 25%;
+}
+}
